@@ -26,8 +26,10 @@ public:
 	//Methods
 	NodeList<TYPE>* GetLast(){
 			NodeList<TYPE>* tmp = start;
-			while (tmp->next)
-			{
+			if (start == NULL){
+				return tmp;
+			}
+			while (tmp->next){
 				tmp = tmp->next;
 			}
 
@@ -37,15 +39,31 @@ public:
 	void PushBack(const TYPE& n){
 		NodeList<TYPE>* node = new NodeList<TYPE>(n);
 
-
 		if (start == NULL)
 			start = node;
-
+		
 		else{
 			NodeList<TYPE>* tmp = GetLast();
 			tmp->next = node;
 			node->next = NULL;
 		}
+
+	}
+
+	bool PopBack(TYPE& n){
+		if (start != NULL){
+			NodeList<TYPE>* tmp = GetLast();
+
+		}
+
+
+	}
+	void Insert(uint position, const TYPE& item){
+		NodeList<TYPE>* tmp = start;
+		if (start == NULL){
+			tmp = start;
+		}
+
 
 	}
 
